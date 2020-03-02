@@ -10,7 +10,7 @@ return computer
 function playGame(player, computer) {
   if (player === computer) {
     console.log("Tie")
-    return "Tie"
+    return 
   }
   if (player === "Paper") {
     if (computer === "Rock") {  
@@ -24,15 +24,15 @@ function playGame(player, computer) {
   if (player === "Scissors") {
       if (computer === "Rock") {
         console.log("Computer wins...");  
-        return "Computer wins.";
+        return 
       } else {
           if (computer === "Paper") {
             console.log("Player wins!"); 
-            return "Player wins!";
+            return 
           }
       }
     }
-  else if (player === "Rock") {
+  if (player === "Rock") {
     if (computer === "Paper") {
         console.log("Computer wins...");
         return;
@@ -50,4 +50,4 @@ document.getElementById("rock").onclick = function() {playGame("Rock", getComput
 document.getElementById("paper").onclick = function() {playGame("Paper", getComputer())};
 document.getElementById("scissors").onclick = function() {playGame("Scissors", getComputer())};
 
-document.getElementById('computer').innerHTML = `Computer: ${computer}`
+
