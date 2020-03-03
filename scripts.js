@@ -1,7 +1,7 @@
 
 let arr = ["Rock", "Paper", "Scissors"];
-playerScore = []
-computerScore = []
+playerWins = []
+computerWins = []
 
 function getComputer() {
 let computer = arr[Math.floor(Math.random()*arr.length)];
@@ -15,7 +15,9 @@ img = document.getElementById('compImg')
   else {
     img.setAttribute('src', 'images/scissors.jpg') 
   }
+  return computer
 }
+
 
 function getPlayer(choice) {
   img = document.getElementById('playerImg')
@@ -35,29 +37,48 @@ function getPlayer(choice) {
 function playerWin() {
   document.getElementById('result').innerHTML = `Player Wins!!`;
   console.log("player")
+  // Push To Array 
 }
 
 function computerWin() {
   document.getElementById('result').innerHTML = `Computer Wins...`;
   console.log("computer")
+  // Push to Array 
 }
 
 function playGame(player, computer) {
   getPlayer(player)
-console.log(player)
-switch (player) {
-  case "Rock": 
-    console.log("rock");
-    break;
-  case "Paper":
-    console.log("paper");
-    break;
-  case "Scissors":
-    console.log("scissors");
-    break;
+
+  if (player === computer) {
+    document.getElementById('result').innerHTML = `Tie Game!`;
+  }
+  else if (player === "Rock") {
+    if (computer === "Paper") {
+      computerWin()
+    }
+    else {
+      playerWin()
+    }
+  }
+  else if (player === "Paper") {
+    if (computer === "Scissors") {
+      computerWin()
+    }
+    else {
+      playerWin()
+    }
+  }
+  else if (player === "Scissors") {
+    if (computer === "Rock") {
+      computerWin()
+    }
+    else {
+      playerWin()
+    }
+  }
 }
 
-}
+
 
 document.getElementById("rock").onclick = function() {playGame("Rock", getComputer())};
 document.getElementById("paper").onclick = function() {playGame("Paper", getComputer())};
