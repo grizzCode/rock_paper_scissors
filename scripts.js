@@ -23,31 +23,25 @@ function playGame(player, computer) {
   if (player === "Paper") {
     if (computer === "Rock") {  
       playerWin()
-      return 
     } else if (computer === "Scissors") {   
       computerWin() 
-      return 
     }
   }
   if (player === "Scissors") {
       if (computer === "Rock") {
         computerWin()
-        return 
       } else {
           if (computer === "Paper") {
             playerWin()
-            return 
           }
       }
     }
   if (player === "Rock") {
     if (computer === "Paper") {
         computerWin()
-        return;
     } else {
         if (computer === "Scissors") {
           playerWin()
-          return;
         }
     }
   }
