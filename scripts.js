@@ -34,45 +34,30 @@ function getPlayer(choice) {
 
 function playerWin() {
   document.getElementById('result').innerHTML = `Player Wins!!`;
+  console.log("player")
 }
 
 function computerWin() {
   document.getElementById('result').innerHTML = `Computer Wins...`;
+  console.log("computer")
 }
 
 function playGame(player, computer) {
   getPlayer(player)
-  if (player === computer) {
-    document.getElementById('result').innerHTML = `Tie Game!`;
-    return 
-  }
-  if (player === "Paper") {
-    if (computer === "Rock") {  
-      playerWin();
-    } else if (computer === "Scissors") {   
-      computerWin();
-    }
-  }
-  if (player === "Scissors") {
-      if (computer === "Rock") {
-        computerWin();
-      } else {
-          if (computer === "Paper") {
-            playerWin();
-          }
-      }
-    }
-  if (player === "Rock") {
-    if (computer === "Paper") {
-        computerWin();
-    } else {
-        if (computer === "Scissors") {
-          playerWin();
-        }
-    }
-  }
+console.log(player)
+switch (player) {
+  case "Rock": 
+    console.log("rock");
+    break;
+  case "Paper":
+    console.log("paper");
+    break;
+  case "Scissors":
+    console.log("scissors");
+    break;
 }
 
+}
 
 document.getElementById("rock").onclick = function() {playGame("Rock", getComputer())};
 document.getElementById("paper").onclick = function() {playGame("Paper", getComputer())};
