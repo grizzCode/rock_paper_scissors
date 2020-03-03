@@ -1,47 +1,73 @@
 
 let arr = ["Rock", "Paper", "Scissors"];
+playerScore = []
+computerScore = []
 
 function getComputer() {
 let computer = arr[Math.floor(Math.random()*arr.length)];
-document.getElementById('computer').innerHTML = `Computer: ${computer}`
-return computer
+img = document.getElementById('compImg')
+  if (computer === "Rock") {
+    img.setAttribute('src', 'images/rock.jpg')
+  }
+  else if (computer === "Paper") {
+    img.setAttribute('src', 'images/paper.jpg') 
+  }
+  else {
+    img.setAttribute('src', 'images/scissors.jpg') 
+  }
 }
 
+function getPlayer(choice) {
+  img = document.getElementById('playerImg')
+  if (choice === "Rock") {
+    img.setAttribute('src', 'images/rock.jpg')
+  }
+  else if (choice === "Paper") {
+    img.setAttribute('src', 'images/paper.jpg') 
+  }
+  else {
+    img.setAttribute('src', 'images/scissors.jpg') 
+  }
+}
+
+
+
 function playerWin() {
-  document.getElementById('result').innerHTML = `Player Wins!!`
+  document.getElementById('result').innerHTML = `Player Wins!!`;
 }
 
 function computerWin() {
-  document.getElementById('result').innerHTML = `Computer Wins...`
+  document.getElementById('result').innerHTML = `Computer Wins...`;
 }
 
 function playGame(player, computer) {
+  getPlayer(player)
   if (player === computer) {
-    document.getElementById('result').innerHTML = `Tie Game!`
+    document.getElementById('result').innerHTML = `Tie Game!`;
     return 
   }
   if (player === "Paper") {
     if (computer === "Rock") {  
-      playerWin()
+      playerWin();
     } else if (computer === "Scissors") {   
-      computerWin() 
+      computerWin();
     }
   }
   if (player === "Scissors") {
       if (computer === "Rock") {
-        computerWin()
+        computerWin();
       } else {
           if (computer === "Paper") {
-            playerWin()
+            playerWin();
           }
       }
     }
   if (player === "Rock") {
     if (computer === "Paper") {
-        computerWin()
+        computerWin();
     } else {
         if (computer === "Scissors") {
-          playerWin()
+          playerWin();
         }
     }
   }

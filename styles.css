@@ -10,5 +10,16 @@ p {
 .rps {
   display: flex;
   justify-content: space-evenly;
-  margin-top: 100px;
+  margin: 80px;
+}
+
+.computerImage {
+  display: flex;
+  justify-content: center;
+}
+
+.flex-container {
+ display: flex;
+ justify-content: space-evenly;
+
 }
