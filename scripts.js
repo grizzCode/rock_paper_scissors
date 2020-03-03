@@ -7,38 +7,46 @@ document.getElementById('computer').innerHTML = `Computer: ${computer}`
 return computer
 }
 
+function playerWin() {
+  document.getElementById('result').innerHTML = `Player Wins!!`
+}
+
+function computerWin() {
+  document.getElementById('result').innerHTML = `Computer Wins...`
+}
+
 function playGame(player, computer) {
   if (player === computer) {
-    console.log("Tie")
+    document.getElementById('result').innerHTML = `Tie Game!`
     return 
   }
   if (player === "Paper") {
     if (computer === "Rock") {  
-      console.log("Player wins!"); 
+      playerWin()
       return 
     } else if (computer === "Scissors") {   
-      console.log("Computer wins...");  
+      computerWin() 
       return 
     }
   }
   if (player === "Scissors") {
       if (computer === "Rock") {
-        console.log("Computer wins...");  
+        computerWin()
         return 
       } else {
           if (computer === "Paper") {
-            console.log("Player wins!"); 
+            playerWin()
             return 
           }
       }
     }
   if (player === "Rock") {
     if (computer === "Paper") {
-        console.log("Computer wins...");
+        computerWin()
         return;
     } else {
         if (computer === "Scissors") {
-          console.log("Player wins!"); 
+          playerWin()
           return;
         }
     }
