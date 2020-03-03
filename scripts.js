@@ -1,7 +1,7 @@
 
 let arr = ["Rock", "Paper", "Scissors"];
-playerWins = []
-computerWins = []
+playerWins = 0
+computerWins = 0
 
 function getComputer() {
 let computer = arr[Math.floor(Math.random()*arr.length)];
@@ -36,14 +36,14 @@ function getPlayer(choice) {
 
 function playerWin() {
   document.getElementById('result').innerHTML = `Player Wins!!`;
-  console.log("player")
-  // Push To Array 
+  playerWins++
+  document.getElementById('playerScore').innerHTML = `Score: ${playerWins}`
 }
 
 function computerWin() {
   document.getElementById('result').innerHTML = `Computer Wins...`;
-  console.log("computer")
-  // Push to Array 
+  computerWins++
+  document.getElementById('computerScore').innerHTML = `Score: ${computerWins}`
 }
 
 function playGame(player, computer) {
