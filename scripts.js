@@ -1,7 +1,7 @@
 
 let arr = ["Rock", "Paper", "Scissors"];
-playerWins = 0
-computerWins = 0
+let playerWins = 0
+let computerWins = 0
 
 function getComputer() {
 let computer = arr[Math.floor(Math.random()*arr.length)];
@@ -31,7 +31,6 @@ function getPlayer(choice) {
     img.setAttribute('src', 'images/scissors.jpg') 
   }
 }
-
 
 
 function playerWin() {
